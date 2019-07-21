@@ -5,5 +5,6 @@ get '/' do
 end
 
 post '/' do
+   p params["name"]
    erb :complete
 end

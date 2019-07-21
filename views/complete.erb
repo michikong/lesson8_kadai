@@ -35,26 +35,34 @@
             <h1 class="mt-4 pb-4 border-bottom">送信完了</h1>
             <p>ありがとうございました。送信を受け付けました。</p>
             <p>3営業日以内をめどにご返信いたしますので、しばらくお待ちください。</p>
-            <table>
-                <th>送信内容</th>
-                <tr class="mt-4 pb-4 border-top">
-                    <td>会社名</td>
-                </tr>
-                <tr class="mt-4 pb-4 border-top">
-                    <td>氏名</td>
-                </tr>
-                <tr class="mt-4 pb-4 border-top">
-                    <td>メール</td>
-                </tr>
-                <tr class="mt-4 pb-4 border-top">
-                    <td>電話番号</td>
-                </tr>
-                <tr class="mt-4 pb-4 border-top">
-                    <td>内容</td>
-                </tr>
+            <table class="table">
+                <h4>送信内容</h4>
+                <tbody>
+                    <tr>
+                        <th style="width:30%;">会社名</th>
+                        <td><%= params['company'] %></td>
+                    </tr>
+                    <tr>
+                        <th>氏名</th>
+                        <td><%= params['name'] %></td>
+                    </tr>
+                    <tr>
+                        <th>メール</th>
+                        <td><%= params['mail'] %></td>
+                    </tr>
+                    <tr>
+                        <th>電話番号</th>
+                        <td><%= params['tel'] %></td>
+                    </tr>
+                    <tr>
+                        <th>内容</th>
+                        <td><%= params['content'].gsub(/\r\n|\r|\n/, "<br>") %></td>
+                    </tr>
+                </tbody>
+            </table>
             </table>
             <div class="text-center mb-4">
-                <a href="contact.html" class="btn btn btn-success">戻る</a>
+                <a href="/" class="btn btn btn-success">戻る</a>
             </div>
         </div>
         <footer class="text-center pt-3 border-top">
